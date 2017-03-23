@@ -1,0 +1,95 @@
+%%%%%%%%%%%%%%%%%%%%%%% file template.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is a template file for The European Physical Journal
+%
+% Copy it to a new file with a new name and use it as the basis
+% for your article
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\documentclass[epj]{svjour}
+% Remove option referee for final version
+%
+% Remove any % below to load the required packages
+%\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+% etc
+%
+\begin{document}
+%
+\title{Electron kinetics across plasma-wall interfaces}
+%\subtitle{Do you have a subtitle?\\ If so, write it here}
+\author{P. Matthias \and R. Schneider \and G. Bandelow \and J. Duras \and K.-F.. L\"ueskow \and D. Kahnfeld \and S. Kemnitz \and L. Lewerentz \and P. Hacker
+% \thanks is optional - remove next line if not needed
+%\thanks{\emph{Present address:} Insert the address here if needed}%
+}                     % Do not remove
+%
+%\offprints{}          % Insert a name or remove this line
+%
+\institute{Institut f\"ur Physik, Ernst-Moritz-Arndt-Universit\"at Greifswald, D-17489 Greifswald, Germany}
+%
+\date{Received: date / Revised version: date}
+% The correct dates will be entered by Springer
+%
+\abstract{
+The most fundamental response of an ionized gas to a macroscopic object 
+is the formation of the plasma sheath. It is an electron depleted space 
+charge region adjacent to the object build-up to screen the object's 
+negative charge which arises from the accumulation of electrons from 
+the plasma. The plasma sheath is thus the positively charged part of an 
+electric double layer whose negatively charged part is inside the wall. 
+In the course of the Transregional Collaborative Research Center SFB/TRR24 
+we investigated, from a quantum-mechanical point of view, the elementary 
+charge transfer processes responsible for the electric double layer 
+and made first steps towards a description of the negative part of the 
+layer inside the wall. Below we critically review our work, describe 
+possible extensions, and identify key issues which need to be resolved 
+to make further progress in the understanding of the electron kinetics 
+across plasma-wall interfaces. In particular, we describe the methods 
+we applied for the calculation of the electron sticking coefficient 
+$S_e$, the ion-wall recombination probability $\alpha_w$, and the 
+secondary electron emission coefficient $\gamma_e$ due specifically to 
+charge-transferring atom-surface collisions. The concept of an electron
+surface layer which we used to merge the sheath potential with the 
+slowly varying potential inside the wall seen by surplus electrons
+will be also reviewed as well as the approach we proposed to measure
+the charge of dust grains optically by Mie scattering. Besides wall 
+parameters, the microscopic look at sheath formation provides new vistas 
+for the modeling and diagnostics of low-temperature gas discharges. 
+A look into the future concludes therefore the presentation. 
+%Each subsection contains therefore also a look into the future. 
+%
+\PACS{
+      {52.40.Hf}{Plasma-material interaction, boundary layer effects}\and
+      {52.40.Kh}{Plasma sheaths}\and
+      {68.49.Jk}{Electron scattering from surfaces}\and
+      {68.49.Sf}{Ion scattering from surfaces (charge transfer,sputtering,SIMS)}
+     } % end of PACS codes
+} %end of abstract
+%
+\maketitle
+%
+
+\begin{acknowledgement}
+Support from the Deutsche Forschungsgemeinschaft through Project No. B10 
+of the Transregional Collaborative Research Center SFB/TRR 24 is greatly 
+acknowledged. 
+\end{acknowledgement}
+
+\include{Introduction.tex}
+\include{1Grundlagen.tex}
+\include{2PIC.tex}
+\include{3Preparation.tex}
+\include{3Preparation.tex}
+\include{4Studies.tex}
+
+%
+\bibliographystyle{Style/icpig}
+%\bibliographystyle{Style/tr24-ohne-titel}
+\bibliography{MicroPhys}
+
+\end{document}
+
+

@@ -1,0 +1,125 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{none}
+    \entry{etching}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=7a481e99d00e747ae22ae39d39fde5ca}{{Cvelbar}}{C\bibinitperiod}{U.}{U\bibinitperiod}{}{}{}{}}%
+        {{hash=dd74f4c8372cef2846bd29e39860a536}{{Mozetic}}{M\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=179324f65a9826b7d15b836bb07f7188}{{Klansjek-Gunde}}{K\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=7a481e99d00e747ae22ae39d39fde5ca}{{Cvelbar}}{C\bibinitperiod}{U.}{U\bibinitperiod}{}{}{}{}}%
+        {{hash=dd74f4c8372cef2846bd29e39860a536}{{Mozetic}}{M\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=179324f65a9826b7d15b836bb07f7188}{{Klansjek-Gunde}}{K\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{d6e78d60d262df670fc25fa84bf80461}
+      \strng{fullhash}{d6e78d60d262df670fc25fa84bf80461}
+      \field{sortinit}{0}
+      \field{labeltitle}{Selective oxygen plasma etchin of coatings}
+      \field{journaltitle}{Plasma Science, IEEE}
+      \field{number}{2}
+      \field{title}{Selective oxygen plasma etchin of coatings}
+      \field{volume}{3}
+      \field{year}{2005}
+      \field{pages}{236\bibrangedash 237}
+    \endentry
+    \entry{sputter}{article}{}
+      \name{labelname}{4}{}{%
+        {{hash=d6bb18ffe77ab96b6665db101c524c7c}{{Zeuner}}{Z\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=53a49a1c9663ed858aa616b963477d90}{{Neumann}}{N\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=207b159868b5b112546ae61b376e3c3f}{{Zalman}}{Z\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=55d9bff47156245dadb6f92e7b6c05fb}{{Biedermann}}{B\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=d6bb18ffe77ab96b6665db101c524c7c}{{Zeuner}}{Z\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=53a49a1c9663ed858aa616b963477d90}{{Neumann}}{N\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=207b159868b5b112546ae61b376e3c3f}{{Zalman}}{Z\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=55d9bff47156245dadb6f92e7b6c05fb}{{Biedermann}}{B\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{70efe7c815c2468212ad616c1eb68b3f}
+      \strng{fullhash}{fcf746c9de38135fc156e81fcb9930c9}
+      \field{sortinit}{0}
+      \field{labeltitle}{Sputter process diagnostics by negative ions}
+      \field{journaltitle}{Journal of Applied Physics}
+      \field{number}{10}
+      \field{title}{Sputter process diagnostics by negative ions}
+      \field{volume}{83}
+      \field{year}{1998}
+      \field{pages}{5083\bibrangedash 5086}
+    \endentry
+    \entry{basti}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=c203579f75972c9f4a1c85383c641fd7}{{Scheuer}}{S\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=c203579f75972c9f4a1c85383c641fd7}{{Scheuer}}{S\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{c203579f75972c9f4a1c85383c641fd7}
+      \strng{fullhash}{c203579f75972c9f4a1c85383c641fd7}
+      \field{sortinit}{0}
+      \field{labeltitle}{Plasmadiagnostische Untersuchungen zur Charakterisierung von Moden in elektronegativen RF-Plasmen}
+      \field{journaltitle}{Master thesis}
+      \field{title}{Plasmadiagnostische Untersuchungen zur Charakterisierung von Moden in elektronegativen RF-Plasmen}
+      \field{year}{2015}
+    \endentry
+    \entry{surf_ioniz}{article}{}
+      \name{labelname}{2}{}{%
+        {{hash=00e05409a5aaeed42196a74f161b0c87}{{Kawano}}{K\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=3dac1ac838873f37ec314dfaa8819e8c}{{Page}}{P\bibinitperiod}{F.\bibnamedelimi M.}{F\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=00e05409a5aaeed42196a74f161b0c87}{{Kawano}}{K\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=3dac1ac838873f37ec314dfaa8819e8c}{{Page}}{P\bibinitperiod}{F.\bibnamedelimi M.}{F\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{166c35dfa28cd1982c33c963177de761}
+      \strng{fullhash}{166c35dfa28cd1982c33c963177de761}
+      \field{sortinit}{0}
+      \field{labeltitle}{Experimental methods and techniques for negative-ion production ionization}
+      \field{journaltitle}{International Journal of Mass Spectrometry and Ion Physics}
+      \field{title}{Experimental methods and techniques for negative-ion production ionization}
+      \field{volume}{50}
+      \field{year}{1983}
+      \field{pages}{1\bibrangedash 33}
+    \endentry
+    \entry{ccrf}{article}{}
+      \name{labelname}{4}{}{%
+        {{hash=fab1f206b5483b14ba015c9f655e9e1a}{{Meichnser}}{M\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=34af6fe3ca182665ee40adccbca3ce49}{{Schmidt}}{S\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=8c6eba904b09ba6acf88313287a049e1}{{Schneider}}{S\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=f5ac6ee5f89d31c6d59b01a30778f574}{{Wagner}}{W\bibinitperiod}{H.-E.}{H\bibinithyphendelim E\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=fab1f206b5483b14ba015c9f655e9e1a}{{Meichnser}}{M\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=34af6fe3ca182665ee40adccbca3ce49}{{Schmidt}}{S\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=8c6eba904b09ba6acf88313287a049e1}{{Schneider}}{S\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=f5ac6ee5f89d31c6d59b01a30778f574}{{Wagner}}{W\bibinitperiod}{H.-E.}{H\bibinithyphendelim E\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{a88a452d4acd69dcb5f2bbf5bbe3f31b}
+      \strng{fullhash}{351b67d9ee61707ac2f0e9a06d4c1a49}
+      \field{sortinit}{0}
+      \field{labeltitle}{Nonthermal Plasma Chemistry and Physics}
+      \field{title}{Nonthermal Plasma Chemistry and Physics}
+      \field{year}{2013}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

@@ -1,0 +1,55 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 1.1}{\ignorespaces Experimental measured negatively charged oxygen ions arriving at the grounded anode as shown in \cite {basti}. The cathode material used was Magnesiumoxide (MgO) and the cathode was powered with $50\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{W}$.\relax }}{1}{figure.caption.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 1.2}{\ignorespaces Top view of the schematic experimental setup taken from \cite {basti}.\relax }}{4}{figure.caption.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 1.3}{\ignorespaces Comparison of the positive ion energy distribution for stainless steel and magnesium oxide.\relax }}{4}{figure.caption.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 1.4}{\ignorespaces Comparison of the negative ion energy distribution for stainless steel and magnesium oxide.\relax }}{5}{figure.caption.7}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Density distribution of $e^-$, $O_2^+$ and $O^-$ with secondary ion emission at the cathode ($\eta =0.03$). The pressure was $5\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{Pa}$ and the rf power was set to $U_{rf}=800\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{V_{pp}}$. The arrow marks the little density peak of $O^-_s$ at the cathode sheath edge.\relax }}{8}{figure.caption.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces Energy distribution of $O⁻_s$ at $5\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{Pa}$.\relax }}{9}{figure.caption.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces Number of elastic collisions of negative ions $O^-$ with neutral molecules $O_2$ per $10^5$ steps. The figure shows them in simulation without SIE (a) and with SIE ($\eta =0.03$) (b) where between the two $O^-$ species is differentiated.\relax }}{9}{figure.caption.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Same energy distribution as in figure (\ref {fig:sims_distribution_top}) at t=0 of the rf cycle, which is equal to $U(t)=0$.\relax }}{11}{figure.caption.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces Energy distribution of negative ions $O^-$. Top: Experimental results for $MgO$ measured at the anode for different rf powers. Bottom: Simulation result with 1d3v PIC simulation with additional SIE taken at the anode sheath edge.\relax }}{12}{figure.caption.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces $O_s^-$ energy distribution under different driver voltages $U_{rf}$ with $5\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{Pa}$ and $\eta =0.01$.\relax }}{13}{figure.caption.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces $O_s^-$ energy distribution for different $\eta $ with $5\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{Pa}$ and $U_{rf}=800V_{pp}$.\relax }}{13}{figure.caption.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 2.8}{\ignorespaces $O_s^-$ energy distribution under different pressures with $U_{pp}=\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{V}$ and $\eta =0.01$.\relax }}{14}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Schematic figure of the geometry of the discharge. On the left hand side is shown the whole discharge in a cylinder, where the simulation domain is marked as a slice. On the right hand side the resulting domain with the corresponding boundary conditions is shown.\relax }}{15}{figure.caption.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Potential of an argon rf discharge with an asymmetry ratio of $0.6$. This leads to a cathode size of $r_{cathode}\approx 2.5\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{cm}$. The pressure was set to $30\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{Pa}$ and the power was $U_{rf}=1000\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{V_{pp}}$.\relax }}{16}{figure.caption.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Potential of an argon discharge at the axis $(r=0)$. \relax }}{17}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Charged particle density distribution of an argon discharge.\relax }}{18}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Charged particle density distribution of an argon discharge at the center of the discharge from a two-dimensional PIC simulation at $30\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{Pa}$ and $1000\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{V_{pp}}$.\relax }}{19}{figure.caption.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Charged particle density distribution of an argon discharge out of an one-dimensional PIC simulation at $30\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{Pa}$ and $400\ensuremath {\tmspace +\thinmuskip {.1667em}\mathrm }{V_{pp}}$.\relax }}{19}{figure.caption.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.7}{\ignorespaces Ion energy distribution in z direction. (a) shows the averaged energy resolved for the vertical z axis and (b) for the radial r axis \relax }}{20}{figure.caption.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.8}{\ignorespaces Ion energy distribution in r direction. (a) shows the averaged energy resolved for the vertical z axis and (b) for the radial r axis \relax }}{20}{figure.caption.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.9}{\ignorespaces Electron energy distribution in z direction. (a) shows the averaged energy resolved for the vertical z axis and (b) for the radial r axis \relax }}{21}{figure.caption.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.10}{\ignorespaces Electron energy distribution in r direction. (a) shows the averaged energy resolved for the vertical z axis and (b) for the radial r axis \relax }}{21}{figure.caption.25}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }

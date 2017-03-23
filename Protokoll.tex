@@ -1,0 +1,112 @@
+\documentclass[
+	english,	%deutsch
+	a4paper,	%A4 Format
+	12pt,		%Schriftgre
+%	twoside		%einseitig
+	]{scrbook}%Artikel
+%\usepackage{luatextra}
+\usepackage[utf8]{inputenc}	%Zeichenkodierung
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}			%deutsche Silbentrennung
+\usepackage{
+	%libertine,		%Schriftart
+	amsmath,
+    graphicx,
+    subfloat,
+    subfig,
+	amssymb,	
+	amsfonts,		%Mathepakete\documentclass[10pt,a4paper]{article}
+	a4wide,			%volle Seitenbreite
+	multirow,		%Zellen verbinden in Tabellen
+	booktabs,		%schne Tabellen
+	array,			%Arrays halt
+	float,			%Gleitumgebungen genau HIER setzen
+    floatflt,
+    caption,		%zustzliche Optionen fr Unterschriften
+	fancyhdr,		%schne Kopf-/Fuzeilen
+	ragged2e,		%besseres Centering, RaggedRight und RaggedLeft
+	caption, hhline, color,
+    hyperref,
+    wrapfig,
+    lipsum,
+    picins
+	}
+    %\usepackage[outdir./]{epstopdf}
+
+    \let\amsboldsymbol\boldsymbol
+    \usepackage{bm}% ändert \boldsymbol
+    \let\boldsymbol\amsboldsymbol
+    
+%Spalten mit Breitenangabe und Umbrchen
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} 	% zentriert
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} 	% linksbndig
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} 	% rechtsbndig
+
+%andere Bezeichnung fr Abbildungen und Tabellen
+\addto\captionsngerman{%
+  \renewcommand{\figurename}{Abb.}
+  \renewcommand{\tablename}{Tab.}
+}
+
+%Def vom Absatz
+\newcommand{\absatz}{\hfill \medskip \newline}
+
+%Def von der Einheit
+\newcommand{\ein}{\ensuremath{\,\mathrm}}
+\newcommand{\diff}{\ensuremath{\mathrm}}
+
+%Papiergeometrie
+\setlength{\headheight}{15pt}
+\setlength{\textheight}{0.8\paperheight}
+\setlength{\parindent}{0px}
+\setlength{\parskip}{0,4em}
+\setlength{\topmargin}{-10mm}
+
+%Kopf- unf Fuzeilen
+\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhf[LH]{\textsc{}}
+%\fancyhf[RH]{\small{Paul Matthias}}
+\fancyhf[CF]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\fancyhead{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\slshape\rightmark}
+\fancyhead[RE]{\slshape\leftmark}
+
+
+\usepackage[autostyle]{csquotes}
+\usepackage[backend=biber, 
+            style=numeric, 
+            sortlocale=de_DE,
+            natbib=true,
+            url=false,
+            doi=true,
+            eprint=false,
+            sorting=none]{biblatex}		%Ausgabe
+\addbibresource{literature.bib}
+\hypersetup{hidelinks}
+% Literaturverzeichnis
+\printbibliography[title=Literaturverzeichnis]
+\bibliography{literature.bib}
+
+\begin{document}
+\setcounter{page}{1} %Einbinden von externen Dateien
+\include{0Deckblatt}
+
+\pagenumbering{arabic}
+\input{Introduction}
+\input{1Grundlagen}
+\input{2PIC}
+\input{Experiment}
+\input{3Preparation}
+\input{4Studies}
+\input{5TwoD}
+\input{Conclusion}
+\input{6Anhang}
+\input{7Literatur}
+\input{Danke}
+\end{document}

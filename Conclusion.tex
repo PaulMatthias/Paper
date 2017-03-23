@@ -1,0 +1,27 @@
+\chapter{Conclusion}
+
+In this thesis I successfully simulated electronegative capacitively coupled rf plasmas in one dimension under low pressure oxygen using the Particle-in-Cell method. 
+Due to latest experimental results, showing a high-energy peak in the anion energy distribution depending on the used cathode material, secondary ion emission effects were additionally applied.
+Since the theoretical background of these surface effects is not given yet, an injection mechanism depending on impinging ions was implemented.
+With the model of SIE I was able to recreate and explain qualitatively the experimental measured high-energy peak of negative oxygen ions $O^-$ at the anode.
+The simulation results yielded an additional low-energy peak in contradiction to the experiment.
+It could be shown that the peak forms due to the surface anions staying in the discharge and then colliding with neutrals in the sheaths.
+I then continued and varied the system parameters to get a quantitative understanding of the anion energy distribution function in respect to applied power, pressure and injection ratio $\eta$.
+The acquired results were very close to the experimental measurements except for the variation of the injection parameter $\eta$, which only slightly affected the resulting anion energy distributions.
+It was shown that due to the lack of asymmetry, which cannot be covered in an one-dimensional simulation, the injected anions stay in the discharge and then add up to a constant state, not influenced by the different chosen injection ratios $\eta$.
+The experiment otherwise states big differences for different cathode materials.\\
+Therefore, a two-dimensional model was introduced, but the corresponding research is still at the beginning.
+With this two-dimensional model a micro discharge and an asymmetric ccrf discharge with argon as a working gas have been simulated.
+Especially, the influence of the asymmetry on the number density distribution and on the energy distribution could be observed.
+Through comparison it was shown that the one-dimensional model is a good approximation for the center of the discharge, except for the forming of a self-bias voltage.
+%To prove the assumptions made in the one-dimensional simulation regarding the negative anions, SIE has been implemented in the tow-dimensional model, too.
+%The injected anions impinged on the anode, where they were absorbed and hence removed from the system.
+%This explained the discrepancy observed in the former model.
+Due to runtime reasons an in depth study lays beyond the scope of this thesis.\\
+The next step would be to implement oxygen as a working gas and apply physically motivated SIE in the two dimensional model.
+Then, one could apply different cathode materials to see the influence of different work functions on the anion $O^-$ energy distribution function, which could not be obtained in one dimension.\\
+To the best of my knowledge until now there do not exist any publications of two dimensional PIC simulations of low temperature laboratory plasmas yet.
+So the developed tool has still a lot of potential.\\
+
+
+

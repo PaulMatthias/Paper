@@ -1,0 +1,40 @@
+\section{Surface effects and secondary ion emission}
+
+In comparison to the known secondary electron emission there also exists \textbf{s}econdary \textbf{i}on \textbf{e}mission (SIE).
+Theoretical studies of surface ionization are mostly devoted to the production of positive ions from incident atoms having thermal energies \cite{surf_ioniz}. 
+The degree of ionization can be derived by applying thermodynamic arguments.
+The ionization coefficient of M is then given by
+\begin{align}
+    \alpha^+(M^+) &= \frac{n^+}{n} \nonumber\\
+                  &= \frac{1-r^+}{1-r} \cdot \frac{w^+}{w} \mathrm{exp}\left(
+                    \frac{\bar{\Phi}^+ + e \sqrt{eF} - I(M)}{k_B T} \right) \; ,
+    \label{eq:pos_inj}
+\end{align}
+where $n^+$ and $n$ are the numbers of $M^+$ and $M$ coming from unit surface area per unit time, $w^+/w$ is the statistical weight ratio of $M^+$ to $M$, $r^+$ and $r$ are the internal reflection coefficients at the potential barrier on the emitter surface, $\bar{\Phi}^+$ is the average work function,  $T$ is the absolute temperature at the surface, $F$ is the externally applied field and $I(M)$ is the initial energy of the impinging atoms. 
+ 
+With little adaptations I can transfer equation (\ref{eq:pos_inj}) for treating a surface which emits negative ions.
+I assume a negatively biased surface like the cathode in an asymmetric ccrf discharge where the equilibrium
+\begin{align}
+    X + e^- \; \mathrm{(in\; the\; substrate\; metal)} \leftrightharpoons X^-
+\end{align}
+is attained at the surface.
+Hence, the equation for the negative ionization coefficient follows in analogy to equation (\ref{eq:pos_inj})
+\begin{align}
+    \alpha^-(X^-) &= \frac{n^-}{n} \nonumber\\
+                  &= \frac{1-r^-}{1-r} \cdot \frac{w^-}{w} \mathrm{exp}\left( 
+                    \frac{-\bar{\Phi}^- + e \sqrt{eF} + A(X)}{k_B T} \right) \; ,
+    \label{eq:neg_inj}
+\end{align}
+where $A(X)$ is the electron affinity of atom $X$, $\bar{\Phi}^-$ is the average work function effective for producing the negative ion $X^-$ on the metal surface and the other parameter are in analogy to the positive ion injection.
+To the best of my knowledge. there are no detailed theoretical and experimental studies of the reflection coefficients $r$ for negative ions. \\ 
+Therefore no detailed information about the cross-sections for such processes exists.
+In this work I assume that negative ions are produced by a positive ion beam on the surface with an efficiency of $\eta=n_-/n_+$.\\ 
+The additional flux of negatively charged particles leads to a reduction of the potential drop as in the case of secondary electron emission.
+
+To get a microscopic knowledge of a ccrf discharge the discharge is simulated.
+Since nonthermal low pressure plasmas are not collision dominated the particles are not Maxwell distributed.
+The mean free paths are of the same magnitude as the electrode gap.
+This means that fluid models fail at this point and kinetic models have to be applied.
+I will use the PIC-MCC method which is widely used for plasma simulation.
+
+

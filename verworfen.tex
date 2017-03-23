@@ -1,0 +1,266 @@
+When the plasma is equilibrated the different species have a Maxwell distribution
+
+\begin{align}
+    f_s(\vec{v}) = \left(\frac{m_s}{2 \pi k_B T_s}\right)^{\frac{3}{2}} \mathrm{exp}\left\{ \frac{-m_s v^2}{2 k_B T_s}\right\} \; .
+\end{align}
+
+In respect to the value of the velocity $|\vec{v}|=v$ the distribution changes to 
+
+\begin{align}
+    f_s(v) = 4\pi v^2 \left(\frac{m_s}{2 \pi k_B T_s}\right)^{\frac{3}{2}} \mathrm{exp}\left\{ \frac{-m_s v^2}{2 k_B T_s}\right\} \; ,
+\end{align}
+
+with the average velocity value 
+
+\begin{align}
+\langle v_s \rangle = \sqrt{\frac{8 k_B T_s}{\pi m_s}}
+\end{align}
+
+and the root-mean-square velocity
+
+\begin{align}
+    \sqrt{\langle v_s^2 \rangle} = \sqrt{\frac{k_B T_s}{\pi m_s}} 
+\end{align}
+
+($k_B$ Boltzmann constant). 
+
+------------------------------------------------------------------
+
+
+In this thesis we won't consider magnetic fields so we neglect them. The magnetic fields produced by moving charges are neglected as well.\\
+
+
+------------------------------------------------------------------------------
+
+Another source of charged particles is the ion emission of the wall then hit by an ion. 
+When a positive ion hits the wall it may emit a negative ion depending on its material. 
+The ratio of impinging ions and emitted negative ions is further named as $\eta$. 
+The production of negative ions due to plasma wall interaction is a current topic.
+So the theoretical background for this process is not given yet.
+In this thesis we will stick to the experiment and try to simulate naive surface processes.
+We will see that we can simulate a plasma which energy distribution functions are close to  experimental results by injecting negative ions at the powered cathode.\\
+Future studies will have to show what processes lead to this injection.
+
+
+
+\section{Electronegative plasmas}
+
+\subsection{Characteristics}
+
+In comparison to ordinary plasma (i. e. Argon or Xenon) which consist of electrons, positive ions and neutrals, electronegative plasma also contains 
+negative ions. 
+They are of high importance for plasma-assisted material processing \cite{sputter}. 
+The majority of negative ions formed in low pressure plasmas are by dissociative attachment of molecular species
+\begin{align}
+    e^- + \mathrm{AB} \rightarrow \mathrm{A} + \mathrm{B}^- \; .
+\end{align}
+When an electron attaches to a neutral molecule it gets excited.
+It is either excited to a real or virtual state which has a curve crossing with a dissociative state (s. figure \ref{fig:ass_det}).
+The fragments my be produced with significant kinetic energy.
+
+\begin{figure}[htbp]
+    \includegraphics[width=.7\textwidth]{../pics/ass_det.eps}
+    \caption{Dissociation attachment of a molecule AB attached with an electron $e^-$ into A and $\mathrm{B}^-$.}
+    \label{fig:ass_det}
+\end{figure}
+
+Another channel for negative ion production is through three-body non-dissociative attachment.
+But further we are only concentrating on the ions produced by the dissociative attachment
+because their production rate is several magnitudes larger in our referred system. \\
+Negative ions can get lost through multiple reactions.
+In our model we will consider neutral detachment, impact detachment and neutralization 
+
+\begin{align}
+    \mathrm{neutral\, detachment} \; A^- + B &\rightarrow A + B + e^- \nonumber\; , \\
+    \mathrm{impact\, detachment} \; A^- + e^- &\rightarrow A + 2e^-  \; ,\\
+    \mathrm{neutralization} \; A^- + B^+ &\rightarrow A + B \nonumber \; . 
+\end{align}
+The responding cross sections can be found in \ref{cross-section}. 
+We will later see that most of the ions get lost through neutral detachment and neutralization.\\
+As with positive ions we also calculate charge exchange collisions with the negative ions
+
+\begin{align}
+    \mathrm{charge\, exchange} \; A + B^- \rightarrow A^- + B  \; ,
+\end{align}
+
+which becomes important when we introduce surface effects.
+The fast ions coming from the surface will cool down through charge exchange collisions.\\
+Considering the additional reaction channels (in our case with Oxygen as the operating gas) we get our rate equations
+
+\begin{align}
+    \frac{\mathrm{d}n_e}{\mathrm{dt}}&=n_e O_2 k_1 + O^- O_2 k_1 - n_e O^- k_2 - n_e O_2^+ k_2 - n_e O_2 k_2 - \nabla \vec{\Phi}_e \nonumber \; ,\\
+    \frac{\mathrm{d}O_2^+}{\mathrm{dt}}&=n_e O_2 k_1 - n_e O_2^+ k_2 - O^- O_2^+ k_2 - \nabla \vec{\Phi}_{O_2^+} \nonumber \; , \\
+    \frac{\mathrm{d}O^-}{\mathrm{dt}}&=n_e O_2 k_1 - O^- O_2^+ k_2 - O^- O_2 k_2 - \nabla \vec{\Phi}_{O^-} \nonumber \; ,\\
+    \vec{\Phi}_i&= q_i\mu_iN_i\vec{E}-D_i\nabla N_i \nonumber \qquad \mathrm{and} \\
+    \nabla \vec{E}&= \frac{q}{\epsilon_0}\left( O_2^+ - O^- - n_e\right) \; .
+\label{rates}
+\end{align}
+
+In principle negative ions behave like heavy, cold electrons ($T_i<<T_e$).
+They obey the same kinetic and transport laws.
+For conventional low pressure plasmas negative ions are confined by the plasma potential.
+The main loss channel is hence by volumetric processes.
+This leads to a density distribution (\ref{fig:profile}) with an electronegative core and regions where negative ions are excluded \cite{profile}.\\
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{../pics/5Pa_800V_profile.eps}
+\caption{1D PIC simulation of Oxygen plasma showing plasma potential, density distributions and quasi neutrality.}
+\label{fig:profile}
+\end{figure}
+
+
+
+One kind of electronegative plasmas is an Oxygen plasma which plays an important role for etching and thin-film deposition techniques \cite{etching}.\\
+The existence of negative ions has a huge impact on the plasma characteristics, as it changes the ion density distribution which may lead to a central quasi-neutral ion-ion plasma and a peripheral electron-ion plasma.  
+The electronegativity is described by the ratio of negative ions to electron $n_-/n_e$.
+We talk about electronegative plasma when this ratio is $n_-/n_e>1$. \\
+The electronegativity may lead to different kinds of instabilities.
+At this point we only mention the attachment-induced ionization instability in oxygen plasmas \cite{instability}.
+A small initial increase of the electron density leads to a shift of the equilibrium state between ionization and electron attachment processes. 
+Under special conditions an additional increase of the electron density via a decrease in electron temperature is possible. 
+The plasma becomes unstable and electron density fluctuations take place. 
+These fluctuations are equivalent to fluctuations of the negative ion density because of the strong coupling between the electron density and the attachment process. 
+But this instability is only to happen at high pressures (>30$\ein{Pa}$) and under certain rf powers.\\
+
+-------------------------------------------------------------------------------------------
+
+We focus especially onto a capacitive-coupled asymmetric rf-discharge in low pressure Oxygen (<10$\ein{Pa}$). 
+That ensures us mostly stable discharges.
+The experimental setup is shown in figure ($\ref{fig:setup_scheme}$). 
+Our plasma chamber consists of a driven cathode, a grounded anode and a grounded wall. 
+In between we have our working gas (in our case Oxygen). 
+A mass spectrometer located at the anode detects the count rate of incoming ions. 
+Despite having symmetric electrodes we have an asymmetrical discharge urging from the grounded wall. 
+This asymmetry depends on the gas pressure in the chamber and the applied voltage. 
+In other words, the lower the pressure and the higher the voltage, the more the ratio from the grounded area to the driven area rises.   
+This affects distribution functions and particle densities close to the electrode edges.
+\\
+According to the experiment we drive our cathode with a rf voltage $U(t)=U_{rf}\sin{(f_{rf}\cdot t)}$ with $U_{rf}$ ranging from 200$\ein{V}$ to 1000$\ein{V}$ and $f_{rf}=13.56\ein{MHz}$ while our anode stays grounded. \\
+In this operational regime the experiment states that the density of negative ions may has an high energetic peak, when measured near the grounded anode. 
+That means negative ions $O^-$ have to be produced either in the sheath near the cathode or at the cathode itself. 
+The effect apparently gets stronger the lower the pressure becomes due to less detachment collisions (s. table \ref{table:a}). 
+We will simulate an equal discharge with particle in cell Monte Carlo collision (PIC-MCC) methods and try to understand which effects cause these 
+peaks (s. figure \ref{fig:normal_distribution}).  
+This method is described in the next chapter (\ref{blub}).\\
+The experiment shows us that the material of the electrode has a huge impact on the count rate of high energetic negative ions. 
+With the PIC method it is possible to simulate even complex plasma wall interactions.
+Our aim will be to simulate this discharge and eventually see that these high energetic negative ions may as well be produced by the bulk or sheath effects. 
+We will, without further knowledge of the exact processes, implement the production of negative ions at the electrode and compare to the experimental results. 
+In that case we will have to find a theoretical model to describe the surface process.
+
+
+
+
+Considering the additional reaction channels (in our case with Oxygen as the operating gas) we get our rate equations
+
+\begin{align}
+    \frac{\mathrm{d}n_e}{\mathrm{dt}}&=n_e O_2 k_1 + O^- O_2 k_1 - n_e O^- k_2 - n_e O_2^+ k_2 - n_e O_2 k_2 - \nabla \vec{\Phi}_e \nonumber \; ,\\
+    \frac{\mathrm{d}O_2^+}{\mathrm{dt}}&=n_e O_2 k_1 - n_e O_2^+ k_2 - O^- O_2^+ k_2 - \nabla \vec{\Phi}_{O_2^+} \nonumber \; , \\
+    \frac{\mathrm{d}O^-}{\mathrm{dt}}&=n_e O_2 k_1 - O^- O_2^+ k_2 - O^- O_2 k_2 - \nabla \vec{\Phi}_{O^-} \nonumber \; ,\\
+    \vec{\Phi}_i&= q_i\mu_iN_i\vec{E}-D_i\nabla N_i \nonumber \qquad \mathrm{and} \\
+    \nabla \vec{E}&= \frac{q}{\epsilon_0}\left( O_2^+ - O^- - n_e\right) \; .
+\label{rates}
+\end{align}
+
+
+
+%taken from basic plasma----------------------------------------------------
+The ions have a higher mass than the electrons which results in higher velocities for the electrons than for the ions. 
+Due to the high mobility of the electrons plasma shields electric fields. 
+Charge separation only exists on scales of the Debye length
+
+\begin{align}
+    \lambda_{D,s} = \sqrt{\frac{\varepsilon_0 k_B T_s}{n_s q_s^2}} \; ,
+\end{align}
+
+where $\varepsilon_0$ is the dielectric constant in a vacuum, $k_B$ is the Boltzmann constant and $T_s$ is the respective specie temperature. 
+The shielding potential of a plasma particle with charge $q$ is given by the Debye-H\"uckel-potential
+
+\begin{align}
+    \Phi(r)=\frac{q}{4 \pi \varepsilon_0 r} \mathrm{exp}(-r/\lambda_D) \; ,
+\end{align}
+
+Since both electrons and ions contribute to the shielding, the total Debye length is defined by
+
+\begin{align}
+    \lambda_D^{-2}= \lambda_{D,e}^{-2} + \lambda_{D,i}^{-2} \; .
+\end{align}
+
+but because of the much higher velocity of the electrons, the Debye length can be approximated by $\lambda_D \approx \lambda_{D,e}$.\\ %name of thihs approach ?????
+Outside of a sphere with a radius of one Debye-length (Debye sphere) the plasma is considered neutral or "quasi neutral". 
+That means that the densities of the different charged particles are close to equal
+
+\begin{align}
+    n_0 = n_e =\sum Z_i n_i \; ,
+\end{align}
+
+with the ion charge number $Z_i$. The sum considers that there may be more than one ion species, as in electronegative plasmas, which we will discuss later in this thesis (s. chapter \ref{elneg}).\\
+The resulting plasma potential $\Phi_{Pl}$ is constant in the bulk region due to the shielding of external fields. \\
+Charged particle follow electromagnetic fields. The interaction is called the Lorentz-force $F_L$. 
+For a particle with mass $m_s$ and charge $q_s$ in the electrostatic non-relativistic case the equation of motion is given by
+
+\begin{align}
+    \dot{\vec{p}}=q_s \vec{E}  \; .
+\end{align}
+
+The acceleration of charged particles
+
+\begin{align}
+    \vec{a}_s = \frac{q_s}{m_s} \vec{E}
+\end{align}
+
+leads to charge separation. This is equal to a small perturbation of the electron density. 
+Since the electrons are displaced in respect to the ions the Coulomb force
+
+\begin{align}
+    F(r) = \frac{Z_i q_e q_i}{4 \pi \varepsilon_0} \frac{1}{r^2}
+\end{align}
+
+pulls them back. Here is $r=|\vec{r}|$ the distance between the electron and the ion. 
+Hence the electrons will start to oscillate.
+These fast plasma oscillations have an angular frequency of
+
+\begin{align}
+    \omega_{p,e} = \sqrt{\frac{n_e e^2}{\varepsilon_0 m_e}} \; ,
+\end{align}
+
+the so called electron plasma frequency.
+
+%SIE
+We do not claim this to  be correct physically.
+But it is a good approximation, because we do not want to compare total numbers with the experiment.
+For us it is sufficient to get qualitative results and visual trends.\\
+We define the parameter $\eta$ describing the ratio of injected $O^-$ to impinging $O^+_2$.
+The anions will be injected with a Maxwell distributed energy. 
+We declare that the used method is not exclusive for impinging $O_2^+$ due to the consistent flux $\Gamma_i$ of positive ions towards the anode.
+Any other reaction resulting in the injection of negative ions would serve our needs.
+Since theoretical studies have not specified the possible reactions yet we stick to our proposed channel of SIE.
+
+
+
+%cross sections, maybe put in appendic
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.6\textwidth]{../data/xsct/elastic_xsct.eps}
+    \caption{Cross section of oxygen for elastic collisions.}
+    \label{fig:coll_elastic}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.6\textwidth]{../data/xsct/excite_xsct.eps}
+    \caption{Cross section of oxygen for excitation collisions.}
+    \label{fig:coll_elastic}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.6\textwidth]{../data/xsct/ion_xsct.eps}
+    \caption{Cross section of oxygen for ion collisions.}
+    \label{fig:coll_neg}
+\end{figure}
+
+

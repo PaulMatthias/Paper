@@ -1,0 +1,103 @@
+\chapter{PIC simulation of a ccrf discharge}
+\label{PIC_discharge}
+
+The system starts with a pressure of $10\ein{Pa}$ and a peak-to-peak voltage of $800\ein{V}$. 
+From there on the pressure will be reduced to get to low pressures around $2\ein{Pa}$.
+The radio-frequency is set to $13.56\ein{MHz}$.
+The initial values for the considered electron density $n_e=5\cdot 10^{9}\ein{/cm^{-3}}$ and electron temperature $T_e = 4 \ein{eV}$ are set.\\
+The Debye-length of the system is $\lambda_{Db} \approx 0.021 \ein{cm}$ and the electron plasma frequency is $\omega_{pe}\approx 3.99 \cdot 10^9 \ein{s^{-1}}$.
+The electrode gap of the experiment is $5\ein{cm}$. 
+To obtain a comparable plasma in 1D the simulation was done with a domain length of $6.72\ein{cm}$.\\
+The results for low pressure discharges do not give us an explanation for the measured high-energy peak (s. figure \ref{fig:MgO}).
+
+\newpage
+\section{Discharge with secondary ion emission}
+
+After I implemented the proposed SIE injection model of oxygen anions, one can see in figure ($\ref{fig:sims1}$) that the number density of the anions is higher and slightly shifted towards the cathode.
+Here, I chose the injection coefficient $\eta=0.03$.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../pics2/5Pa_400V_density_sims.png}
+    \caption{Density distribution of $e^-$, $O_2^+$ and $O^-$ with secondary ion emission at the cathode ($\eta=0.03$). The pressure was $5\ein{Pa}$ and the rf power was set to $U_{rf}=800\ein{V_{pp}}$. The arrow marks the little density peak of $O^-_s$ at the cathode sheath edge.}
+    \label{fig:sims1}
+\end{figure}
+
+Since I want to study the behavior of the anions coming from the surface I separated the two species.
+I refer to them as anions produced by volumetric processes in the plasma $O^-_p$ and surface anions $O^-_s$. 
+%In figure (\ref{fig:sims2}) the two anion species number densities are shown.
+
+%\begin{figure}[htbp]
+%    \centering
+%    \includegraphics[width=0.7\textwidth]{../pics/good/5Pa_400V_dens2_sims.png}
+%    \caption{Same density profile as in figure (\ref{fig:sims1}) with the number densities of $O^-_p$ and $O^-_s$ separated.}
+%    \label{fig:sims2}
+%\end{figure}
+
+It is visible that the density distribution of $O^-_s$ is of one magnitude higher than $O^-_p$. 
+This depends on the chosen injection ratio $\eta$. 
+The surface ion density has a peak close to the cathode resulting from the injection of $O^-_s$. 
+In addition a small density peak at the sheath edge in front of the cathode is noticeable. 
+It forms due to elastic collisions of the anions $O^-_s$ in the sheath. \\
+The $O^-_s$ get accelerated in the sehat, cross the bulk and then get reflected in the anode sheath similar to electrons.\\
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../pics2/5Pa_400V_energy_sims.png}
+    \caption{Energy distribution of $O⁻_s$ at $5\ein{Pa}$.}
+    %The algebraic sign in front of the energy symbolizes the direction where the ions are heading (negative towards the anode, positive towards the cathode).
+    \label{fig:sims_distribution_top}
+\end{figure}
+With additional SIE a high-energy peak builds up. 
+It decays with the time of flight (distance to the cathode) due to charge-exchange and elastic collisions with neutral molecules $O_2$ which results in an energy loss for the anion.
+Also a part of the anions gets detached by neutrals or recombines with positive ions.
+Until now it was assumed that if an anion collides with a neutral it almost gets detached every time.
+But the anions also do elastic collisions which leads to an energy loss and a plateau in the energy. 
+In figure (\ref{fig:coll_sims}) the difference between the numbers of elastic collisions for a normal discharge and a discharge with additional SIE are shown. 
+\begin{figure}[htbp]
+    \centering
+    \subfloat[][]{  \includegraphics[width=0.4\textwidth]{../pics2/elastic_coll.png}}
+    \subfloat[][]{\includegraphics[width=0.4\textwidth]{../pics2/elastic_coll_sims.png}}
+    \caption{Number of elastic collisions of negative ions $O^-$ with neutral molecules  $O_2$ per $10^5$ steps. 
+    The figure shows them in simulation without SIE (a) and with SIE ($\eta=0.03$) (b) where between the two $O^-$ species is differentiated.}
+    \label{fig:coll_sims}
+\end{figure}
+Most elastic collisions happen in the bulk while the sheaths are mostly collisionless.
+But for the surface ions $O^-_s$ one can see that the collisions in the cathode sheath cannot be neglected.
+They lead to an energy loss for the anions which impacts on their energy distribution.\\
+In figure (\ref{fig:sims_distribution_top}) a structure in the lower energy area can be seen.
+The performed elastic collisions during this phase lead to a peak structure in the ion energy distribution.
+To get an impression of the dynamics in the sheath the phase resolved energy distribution for $O^-_{s}$ is shown in figure (\ref{fig:phase_resolved})). \\
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../pics2/time_solo.png}
+    \caption{Same energy distribution as in figure (\ref{fig:sims_distribution_top}) at t=0 of the rf cycle, which is equal to $U(t)=0$.}
+    \label{fig:phase_resolved_solo}
+\end{figure}
+The density peak at the sheath edge (as seen in figure (\ref{fig:sims1})) originates from the low-energy peak in the energy distribution.
+With the approximate transit time of an anion $\tau_{ion}$ and the rf-cycle time $\tau_{rf}$ one can calculate the transit time $\tau_{ion}$.
+Assuming an average ion energy of $40-50 \ein{eV}$ and a traveled distance of $\approx 1\ein{cm}$ it follows the ratio $\frac{\tau_{ion}}{\tau_{rf}}\approx 4.5$.
+This is the number of rf cycles an anion stays in the sheath.
+Hence the number of peaks in the ion energy distribution must be similar.
+In figure (\ref{fig:sims_distribution}) one can see a high-energy peak and 4-5 low-energy peaks in the bulk region. 
+At the sheath edge these density waves overlay.
+Hence, the energy plateau of the anions is mainly influenced by elastic collisions.
+This explains the density peak at the sheath edge.
+%There may be other structures at lowest energies too, but they are not distinguishable from the cold anions in the bulk.
+In the experiment where the cathode potential is shifted by the self-bias voltage the resulting potential is asymmetric. 
+That means, the anions can get enough energy to get to the anode while in the current simulation due to the forced symmetry they get reflected by the sheath potential.
+\begin{figure}[htbp]
+        \centering
+    \includegraphics[width=0.8\textwidth]{../pics2/neg_mg_one_only.png}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../pics2/5Pa_400V_Om_energy_cuts.png}
+    \caption{Energy distribution of negative ions $O^-$. Top: Experimental results for $MgO$ measured at the anode for different rf powers. Bottom: Simulation result with 1d3v PIC simulation with additional SIE taken at the anode sheath edge.}
+    \label{fig:compare_ied}
+\end{figure}
+Figure (\ref{fig:compare_ied}) confirms that negative ions produced at the surface may lead to the measured high-energy peak. 
+But the energy distribution function of the simulation has additional low energy peaks (at $< 100\ein{eV}$), too.
+I consider them to be created due to the lack of asymmetry in the simulation.
+In the experiment all high-energy anions are detected and thereby removed of the discharge.\\
+Additional studies have been done considering variation of pressure, voltage and injection coefficient.
+These studies all support the alredy proposed thesis.
+
+

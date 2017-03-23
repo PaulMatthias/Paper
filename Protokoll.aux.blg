@@ -1,0 +1,5 @@
+[0] Config.pm:318> INFO - This is Biber 1.8
+[0] Config.pm:321> INFO - Logfile is 'Protokoll.aux.blg'
+[36] biber:275> INFO - === Mi Mai  6, 2015, 16:20:37
+[57] Utils.pm:185> ERROR - Cannot find control file 'Protokoll.aux.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
+[58] Biber.pm:109> INFO - ERRORS: 1

@@ -1,0 +1,58 @@
+\section{Experimental setup}
+\label{exp}
+Experimental results from the group of Professor Meichsner are used. 
+The experimental setup is shown in figure (\ref{fig:setup}). 
+It shows a schematic plasma chamber from above. 
+The plasma apparatus consists of a cylindrical vacuum chamber built of stainless steel.
+At the cathode a rf voltage of frequency 13.56$\ein{Hz}$ and a voltage of (500-2000)$\ein{V}$ is applied.
+The anode and the casing are both grounded.
+The distance between the electrodes is varied between (3-5)$\ein{cm}$.
+The difference of the area of the cathode to the grounded anode in addition to the grounded wall leads to an asymmetric discharge characterized by a negative DC self-bias voltage at the powered electrode. 
+The pressure is set up to (2-10)$\ein{Pa}$ and the process gas is oxygen $\rm{O}_2$.
+To detect ions $\rm{O}^-$ at the anode a mass spectrometer is attached.
+Additionally, a PROES (\textbf{P}hase \textbf{r}esolved \textbf{o}ptical \textbf{e}mission \textbf{s}pectroscopy) diagnostic is applied.\\
+
+\begin{figure}[htbp]
+    \begin{minipage}{0.5\textwidth}
+       \includegraphics[width=\textwidth]{../pics/Aufbau.eps}
+       \caption{Top view of the schematic experimental setup taken from \cite{basti}.}
+        \label{fig:setup}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+            \begin{tabular}{l l}
+            \textbf{Operating parameter}: & \\
+            frequency : & 13.56$\ein{MHz}$\\
+            power : & 7...51$\ein{W}$\\
+            pressure : & 4...10$\ein{Pa}$\\
+            process gas : & O$_2$\\
+                material of electrode : & stainless steel, \\ & SiO$_2$, Al$_2$O$_3$, MgO
+            \end{tabular}
+    \end{minipage}
+\end{figure}
+
+By applying a voltage to the cathode a plasma develops. 
+The basics of ccrf plasma physics are described in chapter (\ref{basic_plasma}).
+The cold positive ions $\rm{O_2}^{+}$  of the bulk get accelerated at the plasma sheath towards the grounded anode. 
+There they are detected by the mass spectrometer and result in a well known distribution \cite{ccrf} as shown in figure (\ref{fig:normal_distribution}). 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../pics2/pos_comp.png}
+    \caption{Comparison of the positive ion energy distribution for stainless steel and magnesium oxide.}
+    \label{fig:normal_distribution}
+\end{figure}
+The incoming negative ions $\rm{O}^-$ are detected as well. 
+The number of detected negative ions is much lower than the number of detected positive ions.
+The negative ion distribution of stainless steel and magnesium oxide in figure (\ref{fig:MgO}) show a low-energy peak followed by a plateau which proceeds up to very high energies of several 100$\ein{eV}$. \\
+Depending on the cathode material a high-energy peak appears in the negative ion distribution. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../pics2/neg_comp.png}
+    \caption{Comparison of the negative ion energy distribution for stainless steel and magnesium oxide.}
+    \label{fig:MgO}
+\end{figure}
+
+In this experiment different materials have been tested (Si$\rm{O}_2$, Al$_2$O$_3$, magnesium oxide (MgO), stainless steel).
+In the following I use a PIC simulation to test if these ions originate from surface processes at the cathode or if they emerge from asymmetry effects.\\
+
+
+

@@ -1,0 +1,149 @@
+\chapter{Two-Dimensional PIC simulation}
+The two-dimensional PIC code used was developed by the group of Prof. Dr. Ralf Schneider.
+Over several years the code was developed and optimized for ion thruster modeling.
+I adapted it to simulate a capacitively coupled rf discharge.\\
+Due to the symmetry of the discharge a cylindrical geometry in r and z direction is used.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics/2d_domain.png}
+    \caption{Schematic figure of the geometry of the discharge. On the left hand side is shown the whole discharge in a cylinder, where the simulation domain is marked as a slice. On the right hand side the resulting domain with the corresponding boundary conditions is shown.}
+    \label{fig:2d_domain}
+\end{figure}
+
+To realize an asymmetric discharge the size of the cathode is set smaller than the size of the anode.
+This in addition to the grounded wall leads to a strong asymmetry.
+In an asymmetric discharge the high mobility of the electrons charges the cathode, which then gets a negative self-bias voltage. 
+
+\section{Simulation of an asymmetric ccrf discharge}
+A bigger domain size (500x200), which gets closer to the experimental size, is used from now on.
+In the following simulations with an asymmetry factor of 0.6 will be used, resulting in a cathode radius of $\approx2.5\ein{cm}$. 
+In figure (\ref{fig:potential_argon1}) the averaged potential is shown.
+Due to the asymmetry a negative self-bias voltage at the cathode builds up. 
+This is a main difference to one-dimensional simulations.
+To compare the potential with one-dimensional simulations (s. figure (\ref{fig:profile})) one has to look at the potential at the axis nr=0 (s. figure (\ref{fig:potential_argon2})).
+The shape is the same despite the self-bias voltage which shows the advantage of two-dimensional simulations to obtain a realistic potential.
+
+HERE PUT NEW PIC OF POTENTIAL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{../pics2/argon_potential.png}
+    \caption{Potential of an argon rf discharge with an asymmetry ratio of $0.6$. This leads to a cathode size of $r_{cathode}\approx2.5\ein{cm}$. The pressure was set to $30\ein{Pa}$ and the power was $U_{rf}=1000\ein{V_{pp}}$.}
+    \label{fig:potential_argon1}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics2/argon_potential_axis.png}
+    \caption{Potential of an argon discharge at the axis $(r=0)$. }
+    \label{fig:potential_argon2}
+\end{figure}
+
+In figure (\ref{fig:dens_argon}) the electron and ion number density after a runtime of 30 rf cycles after initialization are shown.
+This is a not yet fully equilibrated state of the plasma, due to the long run-times.
+One can see that the bulk region is slightly deformed at the cathode side.
+This is due to the self-bias voltage which leads to a reduced electron flux towards the cathode.
+The ions follow the motion of the electrons.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{../pics2/argon_density.png}
+    \caption{Charged particle density distribution of an argon discharge.}
+    \label{fig:dens_argon}
+\end{figure}
+Now the density distribution can be compared with the previous one-dimensional results.
+Therefore, the number density distributions of the charged species at the axis (s. figure (\ref{fig:dens_axis_argon})) are taken, which equals the one-dimensional domain.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics2/density_axis.png}
+    \caption{Charged particle density distribution of an argon discharge at the center of the discharge from a two-dimensional PIC simulation at $30\ein{Pa}$ and $1000\ein{V_{pp}}$.}
+    \label{fig:dens_axis_argon}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics2/1d_argon.png}
+    \caption{Charged particle density distribution of an argon discharge out of an one-dimensional PIC simulation at $30\ein{Pa}$ and $400\ein{V_{pp}}$.}
+    \label{fig:dens_axis_argon}
+\end{figure}
+One can see the quasi-neutral bulk region and the ion flux towards the walls. 
+There is a higher flux of ions towards the cathode than to the anode due to the self-bias voltage.
+This additional flux is not covered by the one-dimensional simulation.
+Additionally, the cathode sheath is larger in two dimensions, due to the self-bias voltage.
+So in a one-dimensional simulation the total ion flux towards the cathode and the cathode sheath width are slightly underestimated.
+Nevertheless, the form of the number density distributions is nearly the same, which shows that a one-dimensional simulation is a good approximation regarding the number densities for capacitively discharges near the center.\\
+In addition to the density distributions and the potential a closer look at the energy distributions of the plasma particles is taken.
+The ion energy distributions in r and z direction are shown in figure (\ref{fig:ion_energy_z}) and (\ref{fig:ion_energy_r}).
+%I will not show the velocity distribution in $\theta$ direction, because there is no dynamic in this direction due to the symmetry of the discharge, so the particles will keep their initial thermal velocities.
+%\begin{figure}[htbp]
+%    \centering
+%    \includegraphics[width=1\textwidth]{../pics2/500V_60Pa_velocity.png}
+%    \caption{Argon ion velocity distribution in r and z direction. VELOCITY SCALING!!!!!!!!!!!!!!!!!!!!}
+%    \label{fig:vel_argon}
+%\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{../pics2/iDist_z.png}
+    \caption{Ion energy distribution in z direction. (a) shows the averaged energy resolved for the vertical z axis and (b) for the radial r axis }
+    \label{fig:ion_energy_z}
+\end{figure}
+The z component of the ion energy distribution shows the expected behavior of cold ions in the bulk and accelerating ions towards the electrodes (s. figure (\ref{fig:ion_energy_z} (a))), when averaged along r at fixed z.
+%When the ion velocity distribution is averaged along z at fixed r (s. figure (\ref{fig:ion_energy_z} (b) )), 
+The radial component of the ion energy distribution (s. figure (\ref{fig:ion_energy_r})) shows the same acceleration of the ions towards the wall.
+%This will show up in the ion energy distribution function because the ions at the edge of the cathode will have more energy then in the center of the cathode.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{../pics2/iDist_r.png}
+    \caption{Ion energy distribution in r direction. (a) shows the averaged energy resolved for the vertical z axis and (b) for the radial r axis }
+    \label{fig:ion_energy_r}
+\end{figure}
+Near the cathode edge (r=120) the ions are accelerated towards the cathode due to the radial potential gradient, which results in a larger ion energy.\\
+When comparing the electron energy distributions with the results from the one dimensional PIC simulation (s. figure (\ref{fig:electron_energy})),
+one can see that for the z component of the electron energy distribution (s. figure (\ref{fig:el_energy_z} (a))) the shape of the distributions is nearly the same, except near the cathode.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{../pics2/eDist_z.png}
+    \caption{Electron energy distribution in z direction. (a) shows the averaged energy resolved for the vertical z axis and (b) for the radial r axis }
+    \label{fig:el_energy_z}
+\end{figure}
+Due to the asymmetry the potential has additional radial gradients, especially above the cathode (s. figure (\ref{fig:potential_argon1})).
+This leads to a shift in the electron energy distribution function near the cathode, where the electrons get pushed in radial direction. 
+In the experiment the cathode usually is not located at the wall, but stands in free space.
+Here the cathode is embedded in a grounded ring.
+So this is an effect which can be modified by moving the cathode into the domain.
+Then the mesh and the boundary conditions have to be applied accordingly.
+But I am not doing this approach in this thesis.\\
+Naturally, the r component of the electron distribution function is affected by the same radial gradient of the potential and builds up an analogue distribution function (s. figure (\ref{fig:el_energy_r})).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{../pics2/eDist_r.png}
+    \caption{Electron energy distribution in r direction. (a) shows the averaged energy resolved for the vertical z axis and (b) for the radial r axis }
+    \label{fig:el_energy_r}
+\end{figure}
+
+%Now, the former model of SIE is applied additionally.
+%Since ordinary argon plasma does not contain negative ions, the injected anions are treated as negatively charged argon ions which do not collide with other particles.
+%Following the argumentation of the one-dimensional model the injected anions should not be able to stay in the discharge, due to the additional energy from the self-bias voltage.
+%The resulting energy distribution of the anions is shown in figure (\ref{fig:sie_twod}).
+%\begin{figure}[htbp]
+%    \centering
+%    \includegraphics[width=1\textwidth]{../pics2/inDist_r.png}
+%    \caption{Surface anion energy distribution in r direction. (a) shows the averaged energy resolved for the vertical z axis and (b) for the radial r axis }
+%    \label{fig:el_energy_r}
+%\end{figure}
+%\begin{figure}[htbp]
+%    \centering
+%    \includegraphics[width=1\textwidth]{../pics2/inDist_z.png}
+%    \caption{Surface anion energy distribution in z direction. (a) shows the averaged energy resolved for the vertical z axis and (b) for the radial r axis }
+%    \label{fig:el_energy_r}
+%\end{figure}
+%As one can see the anions impinge on the anode and on the wall, since their energy is higher than the potential drop in front of them.
+%This explains the discrepancy between the one-dimensional model and the experiment.\\
+
+%Übergang
+
+Now that I achieved a stable argon discharge in a two dimensional PIC simulation the next step would be to simulate an oxygen plasma and apply the proposed SIE processes.
+The runtime for in depth studies of even larger domains exceeds the time limit of this thesis.
+%Then i could run simulations with and without SIE and compare the results with the one dimensional simulations and i could get an even better comparison with the experiment.\\
+But the two dimensional system is prepared for capacitively coupled rf plasmas and future research may continue this approach. \\

@@ -1,0 +1,288 @@
+\chapter{PIC-simulation of a cc-rf discharge}
+\label{PIC_discharge}
+
+With the PIC method we simulate the previously described capacitive-coupled radio-frequency discharge.
+To prepare our system we start at a pressure of $10\ein{Pa}$ and a peak-to-peak voltage of $800\ein{V}$. 
+The moderate pressure ensures us a stable discharge. 
+From there on we will reduce the pressure to get to low pressures around $1\ein{Pa}$.
+The radio-frequency is set to $13.56\ein{MHz}$.
+We set our initial values for the considered electron density $n_e=5\cdot 10^{9}\ein{/cm^{-3}}$ and electron temperature $T_e = 4 \ein{eV}$.
+This leads to a Debye-length of $\lambda_{Db} \approx 0.021 \ein{cm}$ and an electron plasma frequency of $\omega_{pe}\approx 3.99 \cdot 10^9 \ein{s^{-1}}$.
+Hence follows our spatial resolution 
+
+\begin{align}
+    \Delta x &= \lambda_{Db}/2 \approx 0.0105 \ein{cm} \; ,\\
+\end{align}
+
+and our time step
+
+\begin{align}
+    \Delta t &= 0.2\frac{1}{\omega_{pe}} \approx 5.01 \cdot 10^{-11} \ein{s} \; . \\
+\end{align}
+
+The electrode gap of the experiment is $5\ein{cm}$. 
+Tests have shown that if we choose our domain that small the resulting bulk is too small.
+Hence we do not have a sufficient big plasma to simulate plasma dynamics.
+This is due to missing radial transport processes which would be implemented in a two dimensional simulation. 
+We set our number of cells $n_{cell}=640$ resulting in a length of $6.72\ein{cm}$.\\
+
+One rf-cycle takes up to $N_{rf}=\frac{1}{\Delta t \cdot 13.56 \ein{MHz}} \approx 1470\ein{steps}$. 
+As already discussed it takes up to $10^3$ rf-cycles for the plasma to get to an equilibrated state.
+That means we have to calculate at least $1.5 \cdot 10^6$ steps. 
+We will always consider a pure Oxygen plasma.
+
+
+\section{Studies of low pressure discharges}
+The resulting potential and density distributions for $p=10\ein{Pa}$ and $U_{pp}=800\ein{V}$ are shown in figure (\ref{fig:normal_dist}).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics/good/10Pa_400V_dens_light.png}
+    \caption{Density distribution of $e^-$, $O_2^+$ and $O^-$ at $10\ein{Pa}$ and $800\ein{V_{pp}}$.}
+    \label{fig:normal_dist}
+\end{figure}
+
+We see how the densities build a plasma chore with electrons, positive ions and negative ions. 
+Further we can see the sheath, where a positive space charge exists.
+We are interested in the energy distribution functions of our species, especially the one of $O^-$.
+In figure (\ref{fig:normal_energy}) the energy distributions of the positive and negative ions are shown.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../pics/good/10Pa_400V_O2p_energy.png}
+    \caption{Logarithmic Energy distribution of positive ions $O_2^+$. Simulation parameters were set to a pressure of $p=10\ein{Pa}$ and a voltage of $U_{pp}=800\ein{V}$.}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{../pics/good/5Pa_400V_Om_energy.png}
+\caption{Logarithmic energy distribution of negative ions $O^-$. Simulation parameters were set to a pressure of $p=5\ein{Pa}$ and a voltage of $U_{pp}=800\ein{V}$.}
+    \label{fig:normal_energy}
+\end{figure}
+
+The energy distribution of $O_2^+$ (figure \ref{fig:normal_energy}) shows the expected behavior of cold ions in the center of the discharge (bulk) and their acceleration towards the electrodes in the sheath.
+The peak is equal to the plasma potential $\Phi_{pl}$.\\
+The energy distribution of $O^-$ is similar to an electron energy distribution (\ref{fig:electron_energy}) as they behave just like heavy and slow electrons.
+
+\begin{figure}[htbp]
+     \centering
+     \includegraphics[width=.6\textwidth]{../pics/good/5Pa_400V_el_energy.png}
+     %\includegraphics[width=.7\textwidth]{compare_el_Om.eps}
+     \caption{Logarithmic energy distribution of electrons. Simulation parameters were set to a pressure of $p=5\ein{Pa}$ and a voltage of $U_{pp}=800\ein{V}$.}
+    \label{fig:electron_energy}
+\end{figure}
+
+The difference between both distributions is the high energy tail of negative ions. 
+This is due to the production of negative ions in the sheath where they get accelerated by the potential drop towards the bulk.
+To have a better understanding of the production rate of $O^-$ we have a look at the dissociative attachment processes (figure \ref{fig:ass_det}).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.7\textwidth]{../pics/good/ass_det.eps}
+    \caption{Total numbers of dissociative attachment processes per $10^5$ steps implying the production rate of $O^-$.}
+    \label{fig:ass_det}
+\end{figure}
+
+We see that most ions are produced in the bulk where they stay relatively cold.
+But a few are produced in the sheath. 
+These are the ones responsible for the high-energy tail of the energy distribution function.\\
+The simulated energy distribution is similar to the one from the experiment.
+Both have a high count-rate at low energies descending into a high-energy tail which cuts off at around half of the peak-to-peak voltage(s. figure (\ref{fig:normal_energy})). \\
+
+The density ratio between electrons and negative ions at a pressure of $10\ein{Pa}$ is about $\alpha\approx 0.3$. 
+Hence we have to reduce the pressure further to attain a true electronegative plasma.
+We will take this measure point as a comparison to our lower pressure results. \\
+In figure (\ref{fig:lower_pressure}) the density distribution of $2\ein{Pa}$ is shown.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.8\textwidth]{../pics/good/2Pa_400V_dens.png}
+    \caption{Density distribution at lower pressures (2$\ein{Pa}$). The driver voltage was set to $U_{pp}=800\ein{V}$.}
+    \label{fig:lower_pressure}
+\end{figure}
+
+The number density of negative ions rises when the pressure falls.
+We see that at these pressures our plasma is close to an electronegative state.
+But looking at the energy distribution functions (fig. \ref{fig:low_pressure_energy}) we do not see a big difference.\\
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.8\textwidth]{../pics/good/2Pa_400V_Om_energy.png}
+    \caption{Logarithmic $O^-$ energy distribution at lower pressure (2$\ein{Pa}$). The driver voltage was set to $U_{pp}=800\ein{V}$.}
+    \label{fig:low_pressure_energy}
+\end{figure}
+
+Our results for low pressure discharges do not give us an explanation for the measured high energetic peak (s. figure \ref{fig:MgO}).
+
+
+\section{Introduction of second ion emission}
+We will introduce \textbf{s}econdary \textbf{i}on \textbf{e}mission (SIE), considering that the experiment delivers a different energy distribution function for different cathode materials. \\
+The peak in the negative ion energy distribution is located at the cut off. 
+Ions with this energy have to be produced very close or directly at the cathode assuming they only get their energy of the potential.
+Another possibility for getting to these high energies is the so called sheath heating.
+It describes the acceleration of electrons by the pulsating potential at the sheath (\cite{sheath-heating}).
+Similar effects may be seen regarding negative ions.
+But this effect would have already shown before (see figure \ref{fig:normal_energy}).
+Due to the much higher mass of the negative ions they react much slower.
+Hence they do not see the pulsating potential and we can neglect the sheath heating.\\
+We will implement an additional ion source at the powered cathode.
+Till now the sources of negative ions are not well studied but there exist a lot of theories and assumptions on how negative ions may be formed.
+As discussed by Ustaze \cite{surface-inject} negative ions can be produced by electron transfer processes at a wall.
+They can be determined by ion beam scattering studies, which is has been amply demonstrated for metal surface, for example in \cite{ion-beam}.
+For oxide surfaces there are few studies yet.
+Ustaze et al studied the interaction of Oxygen atoms and anions with magnesium oxide (MgO).
+The results showed that when impinged with an atom, at the MgO surface an anion was created. 
+The idea is that an Oxygen atom $O$ captures an electron from the surface and becomes a negative ion $O^-$. 
+This interaction is strong energy dependent with higher capture rates at low energies (<$1\ein{eV}$).
+The electron capture can be treated as a non-resonant charge transfer process at the oxygen anion site.
+This happens because of the strong charge locality in magnesium oxide. 
+In a MgO crystal we consider $Mg^{++}$ and $O^{--}$.
+If an atom $O$ gets close to surface it may capture one electron of the anion of MgO.\\
+When impinged by anions the MgO surface also leads to an electron loss.
+So for a complete description both reactions have to be taken into account.\\
+Another approach is given by Stoffels \cite{}. 
+He claims that negative ions may be produced through energetic ions $X^+$ colliding with neutrals in the sheath
+\begin{align}
+    X^+(\mathrm{high E}) + O_2 \rightarrow X^+ + O^+ + O^- \; .
+\end{align}
+But still the theoretical background for near surface ion production is missing. 
+That means that we have no information about when and how many anions may be emitted.\\ 
+%Maybe fill in Demkov model phase approach of A^+B -> AB^+
+
+Since we do not follow the neutral particles we may as well inject a negative ion when a positive ion impinges the wall.
+We do not claim this to  be correct physically.
+But it is a good approximation, because we do not want to compare total numbers with the experiment.
+For us it is sufficient to get qualitative results and visual trends.\\
+We define the parameter $\eta$ describing the ratio of injected $O^-$ to impinging $O^+_2$.
+The anions will be injected with a Maxwell distributed energy. 
+We declare that the used method is not exclusive for impinging $O_2^+$ due to the consistent flux $\Gamma_i$ of positive ions towards the anode.
+Any other reaction resulting in the injection of negative ions would serve our needs.
+Since theoretical studies have not specified the possible reactions yet we stick to our proposed channel of SIE.
+
+
+\section{Discharge with secondary ion emission}
+
+With the proposed injection model of Oxygen anions we start our simulation over.
+In figure ($\ref{fig:sims1}$) we see that the number density of the anions is higher and slightly shifted towards the cathode.
+This is due to the additional asymmetric injection process since we just inject them at the cathode.
+Here we chose $\eta=0.1$.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics/good/5Pa_400V_dens_sims.png}
+    \caption{Simulation with secondary ion emission at the cathode ($\eta=0.03$). The pressure was $5\ein{Pa}$ and we set our voltage to $U_{pp}=800\ein{V}$.}
+    \label{fig:sims1}
+\end{figure}
+
+Since we want to study the behavior of the anions coming from the surface we go on and separate the two species.
+We refer to them as anions produced by volumetric processes in the plasma $O^-_p$ and surface anions $O^-_s$. 
+In figure (\ref{fig:sims2}) the two anion species number densities are shown.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics/good/5Pa_400V_dens2_sims.png}
+    \caption{Same density profile as in figure (\ref{fig:sims1}) with the number densities of $O^-_p$ and $O^-_s$ separated.}
+    \label{fig:sims2}
+\end{figure}
+
+We see that the density distribution of $O^-_s$ is of one magnitude higher than $O^-_p$. 
+This depends on the chosen injection ratio $\eta$. 
+The surface ion density has a peak close to the cathode resulting from the injection of $O^-_s$. 
+We notice a small density peak at the sheath edge in front of the cathode which cannot be explained easily. \\
+
+Looking at the energy distributions (s. figure (\ref{fig:sims_distribution})) we see that the anions $O^-_s$ get accelerated by the sheath potential.
+After passing the bulk they get reflected in the anode sheath similar to electrons.\\
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics/good/5Pa_400V_sims_Om_energy_side.png}
+    \caption{Logarithmic energy distribution of surface anions $O^-_s$ at $p=5\ein{Pa}$ and $U_{pp}=800\ein{V}$. 
+    The injection ratio was $\eta = 0.03$.}
+    \label{fig:sims_distribution}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics/good/5Pa_401V_sims_Om_energy_top.png}
+    \caption{Same energy distribution as in figure (\ref{fig:sims_distribution}) shown from the top.}
+    %The algebraic sign in front of the energy symbolizes the direction where the ions are heading (negative towards the anode, positive towards the cathode).
+    \label{fig:sims_distribution_top}
+\end{figure}
+
+
+Once injected they fly through the bulk and then get reflected by the sheath.
+On their way they may collide. 
+They can do charge-exchange and elastic collisions with neutral molecules $O_2$ which results in an energy loss for the anion.
+After a certain time of flight the anions get cold and stay in the bulk.
+There they do not differ from the anions produced by volumetric processes $O^-_p$.
+In figure (\ref{fig:coll_sims}) we see the difference between the collision numbers for a normal discharge and a discharge with additional SIE. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../pics/coll_elastic.eps}
+    \label{fig:coll_sims}
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics/good/coll_elastic_sims.eps}
+    \caption{Number of elastic collisions of negative ions $O^-$ with neutral molecules  $O_2$ per $10^5$ steps. 
+    On the top side without SIE and on the bottom side with SIE ($\eta=0.03$) where we differ between the two $O^-$ species.}
+\end{figure}
+
+As expected for the bulk anions $O_b^-$ there is no difference in the numbers of elastic collisions.
+Most elastic collisions happen in he bulk while the sheaths are mostly collisionless.
+But for the surface ions $O^-_s$ we can see that they collide a lot in the cathode sheath too which results in an energy loss for the anions. 
+This will have an impact on their energy distribution.\\
+The negative ion energy distribution depends on when they enter the sheath since the potential is rf modulated.
+This and the performed elastic collisions during this phase leads to a peak structure in the ion energy distribution.
+%maybe put this into grundlagen
+For positive ions the behavior in rf-sheaths is well studied.
+Depending on the ratio of the ion transit time $\tau_{ion}$ and the applied power frequency $\tau_{rf}$ the ion energy distribution at the cathode shows saddle like peak structures.
+For further information on rf-sheaths we refer to \cite{sheath_analysis}. 
+To get an impression of the dynamics in the sheath the phase resolved energy distribution for $O^-_{s}$ is shown in figure (\ref{fig:phase_resolved})). 
+
+%Add phase resolved thing here
+
+
+
+We can now see that the density peak at the sheath edge urges from structures in the energy distribution.
+To understand this structure we calculate how long an anion stays in the sheath.
+Therefore we need the approximate transit time of an anion $\tau_{ion}$ and the rf-cycle time $\tau_{rf}$.
+For the transit time $\tau_{ion}$ we assume an average ion energy of $60-80 \ein{eV}$ and a traveled distance of $\approx 1\ein{cm}$.
+The ratio
+\begin{align}
+    \frac{\tau_{ion}}{\tau_{rf}}\approx 4.5
+\end{align}
+gives us the number of rf-cycles an anion stays in the sheath.
+Hence the number of peaks in the ion energy distribution must be similar.
+In figure (\ref{fig:sims_distribution}) we can see the high energetic peak and 2-3 lower energy peaks in the bulk region. 
+This explains our density peak at the sheath edge.
+There may be others too, but they are covered by the cold anions of in the bulk. \\
+
+We can now compare the anion energy distributions with the ones from the experiment.
+But in our one dimensional model the anions do not reach the anode.
+This is due to the symmetric potential.
+In the experiment where the cathode potential is shifted by the self-bias voltage the resulting potential is asymmetric (s. figure (\ref{fig:setup_scheme})). 
+That means the anions get enough energy to get to the anode.
+To compare our results we take our energy distribution at both sheath edges (s. figure \ref{fig:compare_ied}). \\
+
+\begin{figure}[htbp]
+        \centering
+    \includegraphics[width=0.6\textwidth]{../pics/neg_mg.eps}
+    \centering
+    \includegraphics[width=0.7\textwidth]{../pics/good/5Pa_400V_sims_Om_energy_cuts.png}
+    \caption{Energy distribution of negative ions $O^-$. Left: Experimental results for $MgO$. Right: Simulation result with SIE. }
+    \label{fig:compare_ied}
+\end{figure}
+
+We can see that both distributions look similar (s. figure (\ref{fig:compare_ied})).
+This confirms that negative ions produced at the surface may lead to the measured high-energetic peak. 
+But the energy distribution function of the simulation has low energy peaks (at $< 100\ein{eV}$) too.
+These peaks are not observed by the experiment.
+This is due to the lack of asymmetry in the simulation.
+Because we do not have a self-bias voltage our anion energy is not high enough to get to the anode.
+Instead they get reflected and hence build up the described lower energy peaks through the rf and elastic collisions.
+In the experiment all high energy anions are detected and thereby out of the discharge.\\
+
+Now we have prepared our system with SIE and gave qualitative description of the discharge.
+The simulation results are close to the experimental results.
+In the following we want to vary the pressure, the power of the electrode and the injection coefficient $\eta$ to get a more quantitative description. \\
+
+
